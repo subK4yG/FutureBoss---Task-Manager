@@ -1,6 +1,6 @@
 # FutureBoss – Dharma Task Manager
 
-# Project Overview
+## Project Overview
 
 FutureBoss – Dharma Task Manager is a React-based productivity app inspired by the timeless wisdom of the Mahabharat and Ramayan.
 It’s designed to help users:
@@ -23,7 +23,7 @@ This project was built to explore:
 - Building a memorable, portfolio-ready application
 
 
-# Features
+## Features
 
 | Feature                       | Description                                                           |
 | ----------------------------- | --------------------------------------------------------------------- |
@@ -36,7 +36,7 @@ This project was built to explore:
 | **LocalStorage Persistence**  | Tasks are saved even if the page is refreshed.                        |
 | **Elegant UI & UX**           | Bold colors, epic fonts, hover animations, and deep background image. |
 
-# UI / Theme
+## UI / Theme
 
 * Background: medbg.jpg – Deep, bold, epic aesthetic
 * Fonts: Poppins + Merriweather → modern + thematic
@@ -44,7 +44,7 @@ This project was built to explore:
 * Animations: Hover glows, task completion checkmarks
 * Responsive: Works beautifully on desktop & mobile
 
-# Tech Stack
+## Tech Stack
 
 - Frontend: React.js (Hooks)
 - State Management: useState & useEffect
@@ -53,16 +53,16 @@ This project was built to explore:
 - Persistence: LocalStorage
 - Styling: CSS, epic color themes & animations
 
-# Installation & Setup
+## Installation & Setup
 1.  Clone the repo:
-    git clone [https://github.com/<your-username>/futureboss-dharma-task-manager](https://github.com/subK4yG/FutureBoss---Task-Manager).git
-    cd futureboss-dharma-task-manager
+    + git clone [https://github.com/<your-username>/futureboss-dharma-task-manager](https://github.com/subK4yG/FutureBoss---Task-Manager).git
+    + cd futureboss-dharma-task-manager
     
 2.  Install dependencies:
-    npm install
+    + npm install
 
 3.  Run locally:
-    npm start
+    + npm start
 
 ## Industrial & Real-World Use
 
@@ -94,7 +94,7 @@ FutureBoss can evolve into a full-scale productivity and focus platform by intro
 
 The architecture is intentionally modular to support gradual scaling without major refactoring.
 
-# Inspiration
+## Inspiration
 “Duty before comfort, karma before desire.” – Ramayan
 “A man is made by his actions, not his words.” – Mahabharat
 
