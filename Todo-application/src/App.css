@@ -1,0 +1,206 @@
+/*===== Import Fonts =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Merriweather:wght@700&display=swap");
+
+/*===== Global Reset =====*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-color: #0b132b;       /* Deep navy – main card background */
+  --secondary-color: #fca311;     /* Golden amber – buttons & highlights */
+  --white-color: #ffffff;          /* Text */
+  --gray-color: #a0a0a0;           /* Completed task color */
+  --black-color: #000000;          /* Text / icons if needed */
+}
+
+/*===== Body =====*/
+body {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: url("Images/medbg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+}
+
+/* subtle overlay for contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 19, 43, 0.7); /* dark overlay for text readability */
+  z-index: -1;
+}
+
+/*===== App Container =====*/
+.App {
+  text-align: center;
+}
+
+/*===== Heading =====*/
+h1 {
+  font-family: "Merriweather", serif;
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: var(--white-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/*===== Todo Wrapper =====*/
+.TodoWrapper {
+  background: rgba(11, 19, 43, 0.95); /* deep navy, slightly transparent */
+  padding: 2.5rem;
+  border-radius: 1rem;
+  max-height: 40rem;
+  overflow-y: auto;
+  width: 380px;
+  box-shadow: 0 0 2rem rgba(0,0,0,0.6);
+  border: 2px solid var(--secondary-color);
+}
+
+/* Scrollbar Styling */
+.TodoWrapper::-webkit-scrollbar {
+  width: 8px;
+}
+.TodoWrapper::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+.TodoWrapper::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+/*===== Todo Form =====*/
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid var(--secondary-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.todo-input::placeholder {
+  color: var(--gray-color);
+}
+
+.todo-input:focus {
+  border-color: #ffbf00;
+  box-shadow: 0 0 12px #ffbf0050;
+  outline: none;
+}
+
+.todo-btn {
+  padding: 0.55rem 1.2rem;
+  background: var(--secondary-color);
+  color: var(--black-color);
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-btn:hover {
+  background: #ffbf00;
+  color: var(--white-color);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px #ffbf0050;
+}
+
+/*===== Todo Items =====*/
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(252, 163, 17, 0.1); /* soft golden background */
+  color: var(--white-color);
+  padding: 0.85rem 1rem;
+  border-radius: 0.6rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.Todo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #ffbf0050;
+}
+
+/* Task text */
+.incompleted {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--gray-color);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* Icons */
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  margin-left: 0.7rem;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+  transform: scale(1.2);
+  color: var(--secondary-color);
+}
+
+/* Empty Message */
+.empty-message {
+  font-style: italic;
+  color: var(--gray-color);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 420px) {
+  .TodoWrapper {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
