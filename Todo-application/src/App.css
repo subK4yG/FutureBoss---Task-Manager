@@ -204,3 +204,105 @@ h1 {
     font-size: 1.8rem;
   }
 }
+
+/* ===== Priority & Category Select Styling ===== */
+
+.select-row {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.select-group label {
+  font-size: 0.7rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.select-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--secondary-color);
+  color: var(--white-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-group select:focus {
+  outline: none;
+  border-color: #ffbf00;
+  box-shadow: 0 0 10px #ffbf0050;
+}
+
+.select-group option {
+  background: #0b132b;
+  color: var(--white-color);
+}
+
+/* ===== Task Badges ===== */
+
+.todo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.badge-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Priority Colors */
+.priority.high {
+  background: #e63946;
+  color: white;
+}
+
+.priority.medium {
+  background: #fca311;
+  color: black;
+}
+
+.priority.low {
+  background: #2a9d8f;
+  color: white;
+}
+
+/* Category Badge */
+.category {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--secondary-color);
+  color: var(--white-color);
+}
+
+/* ===== Todo Action Icons Wrapper ===== */
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}

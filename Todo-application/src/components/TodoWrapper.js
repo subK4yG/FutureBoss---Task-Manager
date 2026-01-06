@@ -3,6 +3,15 @@ import TodoForm from './TodoForm';
 import { v4 as uuidv4 } from "uuid";
 import EditTodoForm from './EditTodoForm';
 import Todo from './Todo';
+import AIAssistant from "./AIAssistant";
+
+// Random epic quotes
+ const quotes = [
+        "A man is made by his actions, not his words. – Mahabharat",
+        "Duty before comfort, karma before desire. – Ramayan",
+        "Action performed with focus brings clarity.",
+        "Complete your karma, fulfill your dharma."
+    ];
 
 function TodoWrapper() {
     // Load tasks from LocalStorage
@@ -12,13 +21,6 @@ function TodoWrapper() {
     // Karma points (completed tasks)
     const completedCount = todos.filter(todo => todo.completed).length;
 
-    // Random epic quotes
-    const quotes = [
-        "A man is made by his actions, not his words. – Mahabharat",
-        "Duty before comfort, karma before desire. – Ramayan",
-        "Action performed with focus brings clarity.",
-        "Complete your karma, fulfill your dharma."
-    ];
     const [quote, setQuote] = useState(quotes[0]);
 
     useEffect(() => {
@@ -31,11 +33,21 @@ function TodoWrapper() {
     }, [todos]);
 
     // Add Todo
-    const addTodo = (todo) => {
+    const addTodo = (todoData) => {
         setTodos([
-            ...todos, { id: uuidv4(), task: todo, completed: false, isEditing: false }
+            ...todos,
+            {
+                id: uuidv4(),
+                task: todoData.task,
+                priority: todoData.priority || "Medium",
+                category: todoData.category || "Work",
+                completed: false,
+                isEditing: false
+            }
         ]);
-    }
+    };
+
+
 
     // Delete Todo
     const deleteTodo = (id) => setTodos(todos.filter(todo => todo.id !== id));
@@ -70,7 +82,8 @@ function TodoWrapper() {
             </p>
 
             <TodoForm addTodo={addTodo} />
-
+            {/* AI Assistant */}
+            <AIAssistant todos={todos} />
             {/* Display Todos */}
             {todos.length === 0 ? (
                 <p className="empty-message">No duties assigned yet. Begin your journey of focus and discipline.</p>

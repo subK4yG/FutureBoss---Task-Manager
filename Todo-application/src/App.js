@@ -1,11 +1,13 @@
 import './App.css';
 import TodoWrapper from './components/TodoWrapper';
-
+import { TaskProvider } from './context/TaskContext';  
 function App() {
   return (
-    <div className="App">
-       <TodoWrapper />
-    </div>
+    <TaskProvider>
+      <div className="App">
+        <TodoWrapper />
+      </div>
+    </TaskProvider>
   );
 }
 
